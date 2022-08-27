@@ -14,8 +14,10 @@ code {
 
 
 .photo{
-  background-color: blue;
+  /* background-color: blue; */
   height: 50vh;
+  overflow: hidden;
+  border: 1px solid black;
 }
 .photo:hover{
   opacity:0.5;
@@ -39,4 +41,46 @@ code {
   max-width: 300px;
   padding: 10px;
   background-color: white;
+}
+
+.image-ipfs{
+  height: 100%;
+}
+
+.image-ipfs-big{
+  height: 100%;
+  /* border-right: 1px solid grey; */
+}
+
+.product-name{
+  position: relative;
+  top: -50vh;
+  margin-left: 5vh;
+  font-size: 2rem;
+  /* border: 1px solid black; */
+}
+
+.inline{
+  display: inline-block;
+}
+
+.product-description{
+  position: relative;
+  top: -40vh;
+  font-size: 1.2rem;
+  /* border: 1px solid black; */
+  left: -9.5vw;
+}
+
+.product-price{
+  position: relative;
+  top: -30vh;
+  font-size: 1rem;
+  left: -20.5vw;
+}
+
+.product-buy{
+  position:relative;
+  top: -20vh;
+  left: -24vw;
 }

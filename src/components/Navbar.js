@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import {logout} from '../actions/auth';
+import web3 from "../web3";
+
+
 
 
 class Navbar extends Component {
@@ -9,7 +12,11 @@ class Navbar extends Component {
   logout=()=>{
     localStorage.removeItem('token');
     this.props.dispatch(logout());
+    window.web3=false;
   }
+  // connectWallet=()=>{
+  //   connect();
+  // }
 
   render() {
     return (
@@ -25,7 +32,7 @@ class Navbar extends Component {
             {!this.props.isLoggedIn&&<Button variant="contained" href="/login" sx={{background:"white", color:"black"}}>Login</Button>}
             {this.props.isLoggedIn&&<Button variant="contained" onClick={this.connectWallet} sx={{background:"white", color:"black"}}>Connect Wallet</Button>}
             {this.props.isLoggedIn&& <Button variant="conatined" onClick={this.logout} sx={{background:"white", color:"black"}}>Logout</Button>}
-
+           
         </Box>
     );
   }

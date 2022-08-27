@@ -6,12 +6,15 @@ import Photo from "./Photo";
 
 class PhotoGrid extends Component {
   render() {
+    const marketItems=this.props.marketItems;
+    console.log(marketItems);
     return (
       <div align="center" className="photo-grid">
         <Container maxWidth="lg">
           <h1 align="left">Ads</h1>
+          {}
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={1}>
+            <Grid container spacing={2}>
               <Photo />
               <Photo />
               <Photo />
