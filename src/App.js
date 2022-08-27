@@ -16,6 +16,7 @@ import { getAuthTokenFromLocalStorage } from './helpers/utils';
 import jwtDecode from 'jwt-decode';
 import User from "./pages/User";
 import {connect} from 'react-redux';
+import { Profile } from "./pages/Profile";
 
 
 
@@ -64,6 +65,7 @@ class App extends Component {
            <Route exact path="/" component={withRouter(Home)} />
             <Route exact path="/login" component={withRouter(Login)} />
             <Route exact path="/signUp" component={withRouter(SignUp)} />
+            <Route exact path="/profile" component={withRouter(Profile)} />
             <PrivateRoute path="/user/:userId" component={User} isLoggedIn={auth.isLoggedIn}/>
           </Switch>
         </div>
