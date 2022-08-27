@@ -17,7 +17,7 @@ code {
   /* background-color: blue; */
   height: 50vh;
   overflow: hidden;
-  border: 1px solid black;
+  border-bottom: 1px solid #3BBA9C;
 }
 .photo:hover{
   opacity:0.5;
@@ -25,7 +25,8 @@ code {
 }
 
 .photo-grid{
-  margin-top: 10vh;
+  padding-top: 10vh;
+  /* background:"#3C3F58"; */
 }
 
 .popup{
@@ -83,4 +84,30 @@ code {
   position:relative;
   top: -20vh;
   left: -24vw;
+}
+
+.profile-icon{
+/* margin-top: 30px; */
+position: relative;
+top: 3vh;
+right: 1vw;
+}
+
+.profile-icon:hover{
+  cursor: pointer;
+  color:black;
+}
+
+.nav-buttons button{
+  margin:10px;
+  margin-top:30px;
+  right: 1vw;
+}
+
+.auth-buttons{
+  margin: 10px;
+}
+
+.photo-grid-heading{
+  color: #3bba9c;
 }

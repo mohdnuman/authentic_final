@@ -11,8 +11,8 @@ class PhotoGrid extends Component {
     return (
       <div align="center" className="photo-grid">
         <Container maxWidth="lg">
-          <h1 align="left">Ads</h1>
-          {}
+          <h1 align="center" className="photo-grid-heading">ASSETS ON SALE</h1>
+          
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Photo />
