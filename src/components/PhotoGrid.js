@@ -6,8 +6,6 @@ import Photo from "./Photo";
 
 class PhotoGrid extends Component {
   render() {
-    const marketItems=this.props.marketItems;
-    console.log(marketItems);
     return (
       <div align="center" className="photo-grid">
         <Container maxWidth="lg">

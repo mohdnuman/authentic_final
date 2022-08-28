@@ -1,6 +1,6 @@
 import connect from "../web3";
 
-let web3=connect();
+let web3;
 
 const address = "0x75f27E459061F0383DEc5Da6DFFbff760E0A48fd";
 
@@ -304,4 +304,13 @@ const abi = [
   },
 ];
 
-export default new web3.eth.Contract(abi, address);
+
+function main(){
+
+web3=connect();
+return new web3.eth.Contract(abi, address);
+
+
+}
+
+export default main;

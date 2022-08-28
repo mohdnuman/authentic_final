@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Button from "@mui/material/Button";
-import Marketplace from "../contracts/Marketplace";
+import GetMarketplace from "../contracts/Marketplace";
 import connect from "../web3";
 import { NFTStorage, File } from "nft.storage";
 import fs from "fs";
@@ -21,6 +21,7 @@ class AddAsset extends Component {
   handleAdd = async (e) => {
     e.preventDefault();
     const web3=connect();
+    const Marketplace=GetMarketplace();
     //------------------uploading on ipfs--------------------
     const client = new NFTStorage({
       token:
@@ -33,6 +34,7 @@ class AddAsset extends Component {
       image: this.state.fileURL,
     });
     console.log("Metadata stored on Filecoin and IPFS with URL:", metadata.url);
+
 
     const accounts=await web3.eth.getAccounts();
     console.log(accounts);

@@ -57,7 +57,7 @@ class Navbar extends Component {
             Login
           </Button>
         )}
-        {this.props.isLoggedIn&&(
+        {this.props.isLoggedIn&&!window.walletConnected&&(
           <Button
             variant="contained"
             onClick={this.connectWallet}
