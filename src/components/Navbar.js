@@ -2,18 +2,29 @@ import React, { Component } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { logout } from "../actions/auth";
-import web3 from "../web3";
+import connect from "../web3";
 import PersonIcon from "@mui/icons-material/Person";
 
 class Navbar extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      walletConnected:false
+    }
+  }
   logout = () => {
     localStorage.removeItem("token");
     this.props.dispatch(logout());
-    window.web3 = false;
+    
   };
-  // connectWallet=()=>{
-  //   connect();
-  // }
+  connectWallet=()=>{
+    let web3=connect();
+    if(web3){
+      this.setState({
+        walletConnected:true
+      })
+    }
+  }
 
   render() {
     return (
@@ -46,7 +57,7 @@ class Navbar extends Component {
             Login
           </Button>
         )}
-        {this.props.isLoggedIn && (
+        {this.props.isLoggedIn&&(
           <Button
             variant="contained"
             onClick={this.connectWallet}

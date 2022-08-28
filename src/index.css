@@ -111,3 +111,9 @@ right: 1vw;
 .photo-grid-heading{
   color: #3bba9c;
 }
+
+.input-field{
+  border: none;
+  border-bottom: 2px solid black;
+  margin-bottom: 2vh;
+}

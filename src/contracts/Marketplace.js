@@ -1,4 +1,6 @@
-import web3 from "../web3";
+import connect from "../web3";
+
+let web3=connect();
 
 const address = "0x75f27E459061F0383DEc5Da6DFFbff760E0A48fd";
 

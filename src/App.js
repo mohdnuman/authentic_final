@@ -13,14 +13,9 @@ import SignUp from "./pages/SignUp";
 import { authenticateUser } from "./actions/auth";
 import { getAuthTokenFromLocalStorage } from "./helpers/utils";
 import jwtDecode from "jwt-decode";
-import User from "./pages/User";
-
 import { connect } from "react-redux";
-import Marketplace from "./contracts/Marketplace";
-
-// import {connect} from 'react-redux';
 import { Profile } from "./pages/Profile";
-
+import AddAsset from "./pages/AddAsset";
 
 const PrivateRoute = (privateRouteProps) => {
   const { isLoggedIn, path, component: Component } = privateRouteProps;
@@ -46,12 +41,6 @@ const PrivateRoute = (privateRouteProps) => {
 };
 
 class App extends Component {
-  static async getInitialProps() {
-    const nfts = await Marketplace.methods.getDeployedCampaigns().call();
-
-    return { nfts: nfts };
-  }
-
   async componentDidMount() {
     const token = getAuthTokenFromLocalStorage();
     if (token) {
@@ -66,10 +55,6 @@ class App extends Component {
       );
     }
 
-    // const nfts = await Marketplace.methods.fetchMarketItems().call();
-    // this.setState({
-    //   marketItems: nfts,
-    // });
   }
 
   render() {
@@ -88,6 +73,8 @@ class App extends Component {
             <Route exact path="/signUp" component={withRouter(SignUp)} />
 
             <Route exact path="/profile" component={withRouter(Profile)} />
+            <Route exact path="/addAsset" component={withRouter(AddAsset)} />
+
             {/* <PrivateRoute path="/user/:userId" component={User} isLoggedIn={auth.isLoggedIn}/> */}
 
           </Switch>

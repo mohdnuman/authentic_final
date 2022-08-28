@@ -3,7 +3,7 @@ import { login } from "../actions/auth";
 import { connect } from "react-redux";
 import { clearAuthState } from "../actions/auth";
 import { Redirect } from "react-router-dom";
-import {TextField, Button} from '@mui/material';
+import { TextField, Button } from "@mui/material";
 
 class Login extends Component {
   constructor(props) {
@@ -44,29 +44,38 @@ class Login extends Component {
     }
     return (
       <div align="center">
-        <form className="login-form" style={{display:'flex',justifyContent:'center', flexDirection:'column', alignItems:'center'}}>
+        <form
+          className="login-form"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
           <h2>Login</h2>
           {error && <div className="alert error-dailog">{error}</div>}
-          <div style={{width: '25%', marginBottom:'10px'}} className="field">
-            {/* <input type="email" placeholder="Email" required ref={this.emailInputRef} /> */}
-            {/* <input
+          <div style={{ width: "25%", marginBottom: "10px" }} className="field">
+            <input
               type="email"
               placeholder="Email"
               required
               onChange={this.handleEmailChange}
               value={this.state.email}
-            /> */}
-            <TextField fullWidth id="standard-basic" label="Email Address" variant="standard" />
+              className="input-field"
+            />
+           
           </div>
-          <div style={{width: '25%',marginBottom:'10px'}} className="field">
-            {/* <input
+          <div style={{ width: "25%", marginBottom: "10px" }} className="field">
+            <input
               type="password"
               placeholder="Password"
               required
               onChange={this.handlePasswordChange}
               value={this.state.password}
-            /> */}
-             <TextField fullWidth id="standard-basic" label="Password" variant="standard" />
+              className="input-field"
+            />
+            
           </div>
           <div className="field">
             {inProgress ? (
@@ -78,12 +87,9 @@ class Login extends Component {
                 Logging In...
               </button>
             ) : (
-              // <button type="submit" onClick={this.handleSubmit}>
-              //   Log In
-              // </button>
-
-        <Button variant="contained">Submit</Button>
-
+              <Button variant="contained" onClick={this.handleSubmit}>
+                Submit
+              </Button>
             )}
           </div>
         </form>
